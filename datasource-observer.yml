@@ -27,4 +27,4 @@ spring:
                 password: rabbitmq
 execution:
   interval:
-    sensorWeb: 30
+    sensorWeb: 60
