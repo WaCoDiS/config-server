@@ -1,10 +1,32 @@
 spring:
-  profiles:
-    #valid profiles: docker, dev
-    active: dev
+  profiles: dev
   cloud:
     stream:
     #EinAusChannel
+      bindings:
+        newDataEnvelope:
+          destination: wacodis.dataenvelope.creation
+          binder: wacodis_rabbit
+          content-type: application/json
+      #MessageBroker
+      binders:
+        wacodis_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: eum-dcsi.demo.52north.org
+                port: 5672
+                username: rabbitmq
+                password: rabbitmq
+      
+      
+---
+spring:
+  profiles: docker
+  cloud:
+    stream:
+    #InputChannel
       bindings:
         newDataEnvelope:
           destination: wacodis.dataenvelope.creation
