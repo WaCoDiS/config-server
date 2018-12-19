@@ -6,3 +6,15 @@ spring:
       server:
         git:
           uri: https://github.com/WaCoDiS/config-server.git
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

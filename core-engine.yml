@@ -1,5 +1,8 @@
 spring:
   profiles: dev
+  evaluator:
+      matching:
+          minimumOverlapPercentage: 50.0
   cloud:
     stream:
     #EinAusChannel
@@ -24,6 +27,9 @@ spring:
 ---
 spring:
   profiles: docker
+  evaluator:
+    matching:
+        minimumOverlapPercentage: 50.0
   cloud:
     stream:
     #InputChannel
