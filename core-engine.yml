@@ -3,6 +3,8 @@ spring:
   evaluator:
       matching:
           minimumOverlapPercentage: 50.0
+      dataaccess:
+          uri: http://localhost:9000
   cloud:
     stream:
     #EinAusChannel
@@ -30,6 +32,8 @@ spring:
   evaluator:
     matching:
         minimumOverlapPercentage: 50.0
+    dataaccess:
+        uri: http://localhost:9000
   cloud:
     stream:
     #InputChannel
