@@ -24,8 +24,11 @@ spring:
                 port: 5672
                 username: rabbitmq
                 password: rabbitmq
-      
-      
+  executor:
+      #wps endpoint
+      wps:
+          uri: http://localhost:9090
+          version: 2.0.0        
 ---
 spring:
   profiles: docker
@@ -57,3 +60,7 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
+  executor:
+    wps:
+        uri: http://localhost:9090
+        version: 2.0.0
