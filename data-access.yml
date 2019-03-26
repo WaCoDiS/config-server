@@ -1,41 +1,27 @@
 spring:
   profiles: dev
-  resources_api:
-    elsasticsearch:
+  resources-api:
+    elasticsearch:
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
-  cloud:
-    stream:
-      #MessageBroker
-      binders:
-        wacodis_rabbit:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: eum-dcsi.demo.52north.org
-                port: 5672
-                username: rabbitmq
-                password: rabbitmq
+
+  rabbitmq:
+    host: eum-dcsi.demo.52north.org
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
      
 ---
 spring:
   profiles: docker
-  resources_api:
+  resources-api:
     elasticsearch:  
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
-  cloud:
-    stream:
-      binders:
-        wacodis_rabbit:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: localhost
-                port: 5672
-                username: guest
-                password: guest                
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest                
