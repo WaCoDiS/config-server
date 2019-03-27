@@ -5,7 +5,12 @@ spring:
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
-
+  dataenvelopes-api:
+    elasticsearch:
+      uri: http://localhost:9200
+      indexName: dataenvelope
+      type: dataenvelope
+      requestTimeout_Millis: 5000     
   rabbitmq:
     host: eum-dcsi.demo.52north.org
     port: 5672
@@ -20,6 +25,12 @@ spring:
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
+  dataenvelopes-api:
+    elasticsearch:
+      uri: http://localhost:9200
+      indexName: dataenvelope
+      type: dataenvelope
+      requestTimeout_Millis: 5000 
   rabbitmq:
     host: localhost
     port: 5672
