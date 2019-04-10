@@ -10,12 +10,24 @@ spring:
       uri: http://localhost:9200
       indexName: dataenvelope
       type: dataenvelope
-      requestTimeout_Millis: 5000     
-  rabbitmq:
-    host: eum-dcsi.demo.52north.org
-    port: 5672
-    username: rabbitmq
-    password: rabbitmq
+      requestTimeout_Millis: 5000
+  cloud:
+    stream:
+      bindings:
+        acknowledgeDataEnvelope:
+          destination: wacodis.dataenvelope.acknowledgment
+          binder: wacodis_rabbit
+          content-type: application/json
+      binders:
+        wacodis_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: rabbitmq
+                password: rabbitmq
      
 ---
 spring:
@@ -31,8 +43,20 @@ spring:
       indexName: dataenvelope
       type: dataenvelope
       requestTimeout_Millis: 5000 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest                
+  cloud:
+    stream:
+      bindings:
+        acknowledgeDataEnvelope:
+          destination: wacodis.dataenvelope.acknowledgment
+          binder: wacodis_rabbit
+          content-type: application/json
+      binders:
+        wacodis_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
