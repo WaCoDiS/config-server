@@ -5,14 +5,14 @@ spring:
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
-      indexInitialization_RetryMaxAttempts: 5
-      indexInitialization_RetryDelay_Millis: 15000
   dataenvelopes-api:
     elasticsearch:
       uri: http://localhost:9200
       indexName: dataenvelope
       type: dataenvelope
       requestTimeout_Millis: 5000
+      indexInitialization_RetryMaxAttempts: 5
+      indexInitialization_RetryDelay_Millis: 15000
   cloud:
     stream:
       bindings:
@@ -39,14 +39,14 @@ spring:
       uri: http://localhost:9200
       indexName: dataenvelope
       requestTimeout_Millis: 5000
-      indexInitialization_RetryMaxAttempts: 5
-      indexInitialization_RetryDelay_Millis: 15000
   dataenvelopes-api:
     elasticsearch:
       uri: http://localhost:9200
       indexName: dataenvelope
       type: dataenvelope
-      requestTimeout_Millis: 5000 
+      requestTimeout_Millis: 5000
+      indexInitialization_RetryMaxAttempts: 5
+      indexInitialization_RetryDelay_Millis: 15000
   cloud:
     stream:
       bindings:
