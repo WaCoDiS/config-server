@@ -25,7 +25,6 @@ spring:
                 username: rabbitmq
                 password: rabbitmq
   executor:
-      cleanUpTool: cleanUpProcessID
       #wps endpoint
       wps:
           uri: http://localhost:9090
@@ -62,7 +61,6 @@ spring:
                 username: guest
                 password: guest
   executor:
-    cleanUpTool: cleanUpProcessID
     wps:
         uri: http://localhost:9090
         version: 2.0.0
