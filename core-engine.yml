@@ -28,7 +28,15 @@ spring:
       #wps endpoint
       wps:
           uri: http://localhost:9090
-          version: 2.0.0        
+          version: 2.0.0
+          #define expected process outputs, otherwise defaults (PRODUCT, METADATA) are used
+          expectedProcessOutputs:
+           - identifier: PRODUCT
+             mimeType: image/geotiff
+             publishedOutput: TRUE
+           - identifier: METADATA
+             mimeType: text/json        
+             publishedOutput: FALSE
 ---
 spring:
   profiles: docker
@@ -64,3 +72,11 @@ spring:
     wps:
         uri: http://localhost:9090
         version: 2.0.0
+        #define expected process outputs, otherwise defaults (PRODUCT, METADATA) are used
+        expectedProcessOutputs:
+         - identifier: PRODUCT
+           mimeType: image/geotiff
+           publishedOutput: TRUE
+         - identifier: METADATA
+           mimeType: text/json        
+           publishedOutput: FALSE
