@@ -2,7 +2,13 @@ spring:
   profiles: dev
   execution:
     interval:
-        sensorWeb: 30
+      #all values in seconds
+      # 1 hour
+      sensorWeb: 3600
+      sentinel: 3600
+      dwd: 3600
+      # 1 day
+      maxInterval: 86400 
   cloud:
     stream:
     #EinAusChannel
@@ -32,7 +38,13 @@ spring:
   profiles: docker
   execution:
     interval:
-        sensorWeb: 30
+      #all values in seconds
+      # 1 hour
+      sensorWeb: 3600
+      sentinel: 3600
+      dwd: 3600
+      # 1 day
+      maxInterval: 86400 
   cloud:
     stream:
     #EinAusChannel
