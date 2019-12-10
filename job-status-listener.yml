@@ -1,0 +1,79 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      url: http://localhost:8888
+    stream:
+      bindings:
+        tools-execute:
+          destination: wacodis.prod.tools.execute
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+        tools-finished:
+          destination: wacodis.prod.tools.finished
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+        tools-failure:
+          destination: wacodis.prod.tools.failure
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+      binders:
+        wacodis_rabbit:
+          type: rabbit
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  jobdefinitionapi:
+    baseurl: http://localhost:8081
+    apiendpoint: /jobDefinitions/jobstatus/
+    # httpmethod: PATCH
+management:
+  security:
+    enabled: false
+    
+---
+
+spring:
+  profiles:
+    active: docker
+  cloud:
+    config:
+      url: http://localhost:8888
+    stream:
+      bindings:
+        tools-execute:
+          destination: wacodis.prod.tools.execute
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+        tools-finished:
+          destination: wacodis.prod.tools.finished
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+        tools-failure:
+          destination: wacodis.prod.tools.failure
+          binder: wacodis_rabbit
+          group: messageConsumers
+          content-type: application/json
+      binders:
+        wacodis_rabbit:
+          type: rabbit
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  jobdefinitionapi:
+    baseurl: http://localhost:8081
+    apiendpoint: /jobDefinitions/jobstatus/
+    # httpmethod: PATCH
+management:
+  security:
+    enabled: false
