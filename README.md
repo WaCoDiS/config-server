@@ -46,7 +46,7 @@ For a detailed overview about the WaCoDiS system architecture please visit the
 **[WaCoDiS Core Engine](https://github.com/WaCoDiS/core-engine)** repository.  
 
 ## Overview  
-All WaCoDiS components can use the **WaCoDiS Config Server** to fetch configuration from a centralized server. The Config Server has a configuration file for each WaCoDiS component. These files must have the same name as the application/component (e.g. *core-engine.yml*).
+All WaCoDiS components can use the **WaCoDiS Config Server** to fetch configuration files from a centralized server. The Config Server has a configuration file for each WaCoDiS component. These files must have the same name as the application/component (e.g. *core-engine.yml*).
 ### Modules
 The WaCoDiS Config Server is a stand-alone Spring Boot application comprisiung only a single module.
 ### Utilized Technologies
